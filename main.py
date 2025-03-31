@@ -4,27 +4,27 @@ from ball import Ball
 from scorboard import Scorboard
 import time
 
-s=Screen()
-s.setup(width=800,height=600)
-s.bgcolor("black")
-s.title("Pong")
-s.tracer(0)
+sc=Screen()
+sc.setup(width=800,height=600)
+sc.bgcolor("black")
+sc.title("Pong")
+sc.tracer(0)
 
 r_paddle = Paddle((350,0))
 l_paddle = Paddle((-350,0))
 ball=Ball()
 scoreboard = Scorboard()
 
-s.listen()
-s.onkey(r_paddle.go_up,"Up")
-s.onkey(r_paddle.go_down,"Down")
-s.onkey(l_paddle.go_up,"w")
-s.onkey(l_paddle.go_down,"s")
+sc.listen()
+sc.onkey(r_paddle.go_up,"Up")
+sc.onkey(r_paddle.go_down,"Down")
+sc.onkey(l_paddle.go_up,"w")
+sc.onkey(l_paddle.go_down,"s")
 
 game_is_on = True
 while game_is_on:
     time.sleep(ball.move_speed)
-    s.update()
+    sc.update()
     ball.move()
 
     #Detect collision with wall
@@ -45,4 +45,4 @@ while game_is_on:
         ball.reset_position()
         scoreboard.r_point()
 
-s.exitonclick()
+sc.exitonclick()
