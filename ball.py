@@ -6,9 +6,9 @@ class Ball(Turtle):
         self.color("white")
         self.shape("circle")
         self.penup()
-        self.x_move = 10
-        self.y_move = 10
-        self.move_speed = 0.1
+        self.x_move = 11
+        self.y_move = 11
+        self.move_speed = 0.10
 
     def move(self):
         new_x = self.xcor()+self.x_move
